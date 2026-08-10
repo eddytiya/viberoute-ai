@@ -30,22 +30,25 @@ Instead of functioning as another Spotify client, VibeRoute treats listening his
 
 ### Personalized Dashboard
 
-{PASTE THE SS HERE}
+<img width="1920" height="1027" alt="image" src="https://github.com/user-attachments/assets/bb1344ac-bccb-42f1-8393-9f3c34962002" />
+
 
 ### AI Playlist Architect
 
-{PASTE THE SS HERE}
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/a84871af-c7d6-4ed8-ac7a-d8d527ab8de2" />
+
 
 ### Recommendations and Taste Insights
 
-{PASTE THE SS HERE}
+<img width="1920" height="1023" alt="image" src="https://github.com/user-attachments/assets/16822ffc-105b-4739-a9e4-e19f9393eaa2" />
+
 
 ### Sound Map and Route Playlist
 
-{PASTE THE SS HERE}
+<img width="1920" height="1035" alt="image" src="https://github.com/user-attachments/assets/dceeaa94-3fd8-421e-8c9d-78a30268ae89" />
 
-> Replace each placeholder with a committed image, for example:
-> `![VibeRoute dashboard](docs/screenshots/dashboard.png)`
+
+
 
 ## Key Features
 
