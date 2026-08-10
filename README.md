@@ -47,6 +47,10 @@ Instead of functioning as another Spotify client, VibeRoute treats listening his
 
 <img width="1920" height="1035" alt="image" src="https://github.com/user-attachments/assets/dceeaa94-3fd8-421e-8c9d-78a30268ae89" />
 
+### Route
+
+
+
 
 
 
