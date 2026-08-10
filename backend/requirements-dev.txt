@@ -1,0 +1,4 @@
+# Extends requirements.txt with tools only needed for local development/testing.
+# pytest, pytest-asyncio, and httpx (needed by fastapi.testclient) are already in
+# requirements.txt since the app depends on them directly too.
+-r requirements.txt

@@ -1,0 +1,35 @@
+# Env / secrets
+.env
+.env.local
+backend/.env
+frontend/.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+backend/.venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs
+logs/
+*.log
+
+# ML artifacts
+ml/models/trained/*
+!ml/models/trained/.gitkeep
+ml/datasets/raw/*
+ml/datasets/processed/*
+!ml/datasets/raw/.gitkeep
+!ml/datasets/processed/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+.claude/
