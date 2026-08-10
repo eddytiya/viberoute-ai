@@ -1,15 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 import type { Critique } from "../../types/critic";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 },
+  },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
 };
 
 export function CriticResult({ critique }: { critique: Critique }) {
@@ -34,7 +44,14 @@ export function CriticResult({ critique }: { critique: Critique }) {
       <motion.h2 variants={item}>{critique.title}</motion.h2>
 
       {paragraphs.map((p, i) => (
-        <motion.p key={i} variants={item} style={{ fontSize: 15, lineHeight: 1.6 }}>
+        <motion.p
+          key={i}
+          variants={item}
+          style={{
+            fontSize: 15,
+            lineHeight: 1.6,
+          }}
+        >
           {p}
         </motion.p>
       ))}
