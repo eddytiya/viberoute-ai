@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 import type { SpotifyTrack } from "../../types/spotify";
 import { TrackCard } from "./TrackCard";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.04 } },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, x: -8 },
   show: { opacity: 1, x: 0, transition: { duration: 0.25, ease: "easeOut" } },
 };

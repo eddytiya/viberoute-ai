@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 
 import type { DiscoveredTrack } from "../../types/recommendation";
 import { RecommendationCard } from "./RecommendationCard";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.05 } },
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 10 },
   show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: "easeOut" } },
 };
