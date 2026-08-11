@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: viberoute-ai-demo
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements-demo.txt
+    startCommand: uvicorn app.demo_main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.11
+      - key: ENVIRONMENT
+        value: production
+      - key: FRONTEND_URL
+        value: https://viberoute-ai.vercel.app
+      - key: SESSION_SECRET_KEY
+        generateValue: true
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      - key: SPOTIFY_REDIRECT_URI
+        value: https://viberoute-ai.vercel.app/api/v1/auth/callback
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENROUTE_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
