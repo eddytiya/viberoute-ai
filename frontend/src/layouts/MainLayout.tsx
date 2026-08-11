@@ -7,6 +7,7 @@ import { Sidebar } from "../components/layout/Sidebar";
 import { PageTransition } from "../components/common/PageTransition";
 import { useKeyboardShortcuts } from "../hooks/useKeyboardShortcuts";
 import { useSpotifyPlayer } from "../hooks/useSpotifyPlayer";
+import { IS_DEMO_MODE } from "../utils/constants";
 
 const PAGE_TITLES: Record<string, string> = {
   "/dashboard": "Dashboard",
@@ -32,6 +33,22 @@ export function MainLayout() {
       <Sidebar />
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
         <Navbar title={title} />
+        {IS_DEMO_MODE && (
+          <div
+            role="status"
+            style={{
+              padding: "10px var(--space-5)",
+              borderBottom: "1px solid var(--border)",
+              background: "var(--accent-bg)",
+              color: "var(--text-h)",
+              fontSize: 12,
+            }}
+          >
+            <strong style={{ color: "var(--accent)" }}>Public Demo Edition</strong>
+            {" — "}Optimized for Render&apos;s 512 MB free tier. Semantic Recommendations and Sound Map ML run in
+            the full self-hosted edition.
+          </div>
+        )}
         <main style={{ flex: 1, padding: "var(--space-5)", overflow: "auto" }}>
           <AnimatePresence mode="wait">
             <PageTransition key={location.pathname}>

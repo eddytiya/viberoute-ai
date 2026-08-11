@@ -14,6 +14,8 @@ const NAV_ITEMS = [
   { to: "/profile", label: "Profile", icon: User },
 ];
 
+const FULL_EDITION_PATHS = new Set(["/recommendations", "/sound-map"]);
+
 export function Sidebar() {
   return (
     <aside
@@ -31,27 +33,34 @@ export function Sidebar() {
         <strong style={{ color: "var(--text-h)", fontSize: 18 }}>VibeRoute AI</strong>
       </div>
 
-      {NAV_ITEMS.map(({ to, label, icon: Icon }) => (
-        <NavLink
-          key={to}
-          to={to}
-          style={({ isActive }) => ({
-            display: "flex",
-            alignItems: "center",
-            gap: "var(--space-3)",
-            padding: "var(--space-3) var(--space-3)",
-            borderRadius: "var(--radius-md)",
-            textDecoration: "none",
-            color: isActive ? "var(--accent)" : "var(--text)",
-            background: isActive ? "var(--accent-bg)" : "transparent",
-            fontSize: 14,
-            fontWeight: isActive ? 600 : 400,
-          })}
-        >
-          <Icon size={18} />
-          {label}
-        </NavLink>
-      ))}
+      {NAV_ITEMS.map(({ to, label, icon: Icon }) => {
+        const fullEditionOnly = FULL_EDITION_PATHS.has(to);
+        return (
+          <NavLink
+            key={to}
+            to={to}
+            title={fullEditionOnly ? "Available in the full self-hosted edition" : undefined}
+            style={({ isActive }) => ({
+              display: "flex",
+              alignItems: "center",
+              gap: "var(--space-3)",
+              padding: "var(--space-3) var(--space-3)",
+              borderRadius: "var(--radius-md)",
+              textDecoration: "none",
+              color: isActive ? "var(--accent)" : "var(--text)",
+              background: isActive ? "var(--accent-bg)" : "transparent",
+              fontSize: 14,
+              fontWeight: isActive ? 600 : 400,
+            })}
+          >
+            <Icon size={18} />
+            {label}
+            {fullEditionOnly && (
+              <span style={{ marginLeft: "auto", fontSize: 9, fontWeight: 700, color: "var(--accent)" }}>FULL</span>
+            )}
+          </NavLink>
+        );
+      })}
     </aside>
   );
 }
